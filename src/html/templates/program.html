@@ -1,0 +1,22 @@
+<div class="spinner" ng-show="loading">
+	<div class="rect1"></div>
+	<div class="rect2"></div>
+	<div class="rect3"></div>
+	<div class="rect4"></div>
+	<div class="rect5"></div>
+</div>
+<div ng-repeat="concert in concerts" class="concert">
+	<span class="concert-line" style="background:{{concert.venue.color}};"></span>
+	<div class="concert-time" style="background:{{concert.venue.color}};">{{concert.day}}, {{concert.time | niceTime}}</div>
+	<div class="concert-artist">
+		<span style="background:{{concert.venue.color}};" ng-switch on="concert.artists">
+			<span ng-switch-when="">TBA</span>
+			<span ng-switch-default>
+				<a ng-click="updateActiveState('artists')"  ui-sref="root.artists.slug({slug:concert.artists[0].slug})">{{concert.artists[0].name}}</a>
+			</span>
+			<!-- <span ng-switch-default>{{concert.artists[0].name}}</span> -->
+			<!-- <span ng-switch-default><a href="/kunstnere#{{concert.artists[0].id}}">{{concert.artists[0].name}}</a></span> -->
+		</span>
+	</div>
+	<div class="concert-venue" style="background:{{concert.venue.color}};">{{concert.venue.name}}</div>
+</div>

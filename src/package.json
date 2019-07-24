@@ -1,0 +1,21 @@
+{
+	"name": "flux",
+	"version": "0.1.0",
+	"main": "gruntfile.js",
+	"author": "Christian Grøngaard",
+    "devDependencies": {
+    	"bower": "latest",
+        "grunt": "latest",
+    	"grunt-contrib-concat": "latest",
+    	"grunt-contrib-jshint": "latest",
+    	"grunt-contrib-sass": "latest",
+    	"grunt-contrib-uglify": "latest",
+    	"grunt-contrib-watch": "latest",
+    	"grunt-contrib-cssmin": "latest",
+        "grunt-contrib-imagemin": "latest",
+    	"grunt-phplint": "latest"
+    },
+    "scripts": {
+        "postinstall": "node node_modules/bower/bin/bower install"
+    }
+}

@@ -1,0 +1,144 @@
+#page {
+	//max-width: 1000px;
+}
+
+header[role="banner"] {
+	
+
+	h1 {
+		font-size: em(42,14);
+		line-height: em(63, 42);
+	}
+
+	h2 {
+		font-size: em(14,14);
+	}
+}
+
+nav[role="navigation"] {
+	width: pc(400, 1000);
+	left: pc(300, 1000);
+	font-size: em(28,14);
+	line-height: em(63, 21);
+}
+
+#container {
+	width: pc(900,1000);
+	padding: em(86,14) 0 em(21,14);
+
+}
+
+.info {
+	.info-image {
+		float: left;
+		width: pc(450,900);
+	}
+	.info-text {
+		float: right;
+		width: pc(450,900);
+		padding: em(42,14) pc(25,450);	
+	}
+}
+
+.artist {
+	margin: 0 0 em(63,14);
+
+	.artist-meta {
+		float: left;
+		width: pc(450,900);
+	}
+	.artist-details {
+		float: right;
+		width: pc(450,900);
+	}
+
+	.artist-info {
+		padding: em(42,14) pc(50,450);
+		h2 {
+			padding: 0 0 em(21,14);
+		}
+	}
+
+	.artist-data {
+		.artist-venue {
+			width: pc(400,450);
+			padding: 0 0 0 pc(25, 450);
+		}
+		.artist-time {
+			width: pc(350,450);
+			padding: 0 0 0 pc(25, 450);
+		}	
+	}
+	
+
+	&.even {
+		.artist-meta {
+			float: right;
+		}
+		.artist-details {
+			float: left;
+		}
+		.artist-data {
+			span {
+				float: right;
+			}
+			.clock, .house {
+				padding: 0 0 0 10px;
+			}
+			.artist-venue {
+				padding: 0 pc(25, 450) 0 0;
+			}
+			.artist-time {
+				padding: 0 pc(25, 450) 0 0;
+			}
+		}
+	}
+	
+	&.odd {
+		.artist-data {
+			div {
+				float: right;
+			}
+		}
+	}
+}
+
+.concert {
+	font-size: em(21,14);
+	line-height: em(42, 21);
+	margin: 0 0 em(42,21);
+}
+
+#tickets {
+	
+	font-size: em(21, 14);
+	padding: em(53,21) 0;
+	a {
+		
+		line-height: em(63,21);
+		
+		
+	}
+}
+
+footer {
+	#sponsors {
+		padding: em(42,14) pc(25,1000);
+		li {
+			width: pc(200,1000);
+			margin: 0 pc(25,1000);
+
+		}
+	}
+
+	p {
+		width: pc(500,1000);
+		padding: 0 0 0 pc(50,1000);
+	}
+
+	#men {
+		width: pc(300,1000);
+		padding: 0 pc(50,1000) 0 0;
+		
+	}
+}

@@ -1,0 +1,33 @@
+#page {
+	//max-width: 600px;
+}
+
+header[role="banner"] {
+	
+}
+
+nav[role="navigation"] {
+	width: pc(400,600);
+	left: pc(100,600);
+}
+
+#container {
+	width: pc(500,600);
+}
+
+.info {
+	.info-text {
+		padding: em(28,14) pc(25,500);	
+	}
+}
+
+.artist {
+	.artist-info {
+		padding: em(28,14) pc(25,500);		
+	}
+	.artist-data {
+		.artist-venue, .artist-time {
+			padding: 0 0 0 pc(25, 500);
+		}
+	}
+}

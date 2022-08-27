@@ -1,0 +1,12 @@
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+
+@function calc-percent($target, $container) {
+	@return ($target / $container) * 100%;
+}
+@function cp($target, $container) {
+	@return calc-percent($target, $container);
+}

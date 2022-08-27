@@ -1,0 +1,12 @@
+{
+	"name": "flux",
+	"dependencies": {
+		"angular": "latest",
+		"angular-truncate": "latest",
+		"angular-ui-router": "latest",
+		"angular-resource": "latest",
+		"angular-sanitize": "latest",
+		"color-thief": "latest",
+		"tinycolor": "latest"
+	}
+}

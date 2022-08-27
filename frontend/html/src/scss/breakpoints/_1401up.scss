@@ -1,0 +1,17 @@
+.container {
+	max-width: 1600px;	
+}
+
+.artist {
+	border: 1px solid white;
+	width: pc(750, 1600);
+	float: left;
+
+	&.even {
+		//float: right;
+	}
+
+	&.odd {
+		//lear: right;
+	}
+}

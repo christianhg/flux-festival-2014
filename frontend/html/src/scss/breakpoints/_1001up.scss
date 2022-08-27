@@ -1,0 +1,106 @@
+#page {
+	//max-width: 1200px;
+	
+}
+
+
+
+header[role="banner"] {
+	
+	padding: em(84,14) 0;
+
+	h1 {
+		font-size: em(56,14);
+		line-height: em(84, 56);
+	}
+
+	h2 {
+		font-size: em(21,14);
+	}
+
+	.tagline {
+		font-size: em(21, 14);
+		line-height: em(42, 21);
+		margin: em(21, 21) auto 0;
+	}
+}
+
+nav[role="navigation"] {
+	width: pc(400, 1200);
+	left: pc(400, 1200);
+}
+
+#container {
+	width: pc(1000,1200);
+	padding: em(107,14) 0 em(21,14);
+}
+
+
+
+.artist {
+	margin: 0 0 em(86,14);
+
+	.artist-meta {
+		float: left;
+		width: pc(500,1000);
+	}
+	.artist-details {
+		float: right;
+		width: pc(500,1000);
+	}
+}
+
+.artist {
+	.artist-info {
+		padding: em(42,14) pc(50,500);
+
+		h2 {
+			font-size: em(28,14);
+			padding: 0 0 em(21,28);
+
+		}
+
+		p {
+			
+			font-family: $serif;
+			//font-size: em(14*1.5,14);
+			//line-height: em(21*1.5,14*1.5);
+			//height: em(126,14);
+			//overflow: hidden;
+		}
+	}
+
+	.artist-data {
+		.artist-venue {
+			width: pc(450,500);
+			padding: 0 0 0 pc(25, 500);
+		}
+		.artist-time {
+			width: pc(400,500);
+			padding: 0 0 0 pc(25, 500);
+		}	
+	}
+}
+
+footer {
+	#sponsors {
+		padding: em(63,14) pc(50,1200);
+		li {
+			width: pc(200,1200);
+			margin: 0 pc(50,1200);
+
+		}
+	}
+
+	p {
+		font-size: em(21,14);
+		width: pc(700,1200);
+		padding: 0 0 0 pc(100,1200);
+	}
+
+	#men {
+		width: pc(300,1200);
+		padding: 0 pc(100,1200) 0 0;
+		
+	}
+}

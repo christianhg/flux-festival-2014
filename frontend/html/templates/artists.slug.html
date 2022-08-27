@@ -1,0 +1,60 @@
+<div class="spinner" ng-show="loading">
+	<div class="rect1"></div>
+	<div class="rect2"></div>
+	<div class="rect3"></div>
+	<div class="rect4"></div>
+	<div class="rect5"></div>
+</div>
+<div id="breadcrumbs" ng-hide="loading">
+	<ol>
+		<li class="line"></li>
+		<li><a ui-sref="root.artists">Kunstnere</a></li>
+		<li>{{artist.name}}</li>
+	</ol>
+</div>
+<div id="artist" class="artist odd" ng-hide="loading">
+	<div class="artist-meta">
+		<div class="artist-image">
+			<img src="img/artists/{{artist.image}}" alt="{{artist.name}}" crop-image>
+		</div>
+		<div class="artist-data">
+			<div class="artist-venue" ng-switch on="artist.concerts[0].venue">
+			<!-- <div style="background: {{artist.colors[1].hex}}" class="artist-venue" ng-switch on="artist.concerts[0].venue"> -->
+				<span class="house"></span>
+				<span ng-switch-when="null">TBA</span>
+				<span ng-switch-default>{{artist.concerts[0].venue.name}}</span>
+			</div>
+			<div class="artist-time" ng-switch on="artist.concerts[0].time">
+			<!-- <div style="background: {{artist.colors[2].hex}}" class="artist-time" ng-switch on="artist.concerts[0].time"> -->
+				<span class="clock"></span>
+				<span ng-switch-when="null">TBA</span>
+				<span ng-switch-default>{{artist.concerts[0].day}}, {{artist.concerts[0].time | niceTime}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="artist-details">
+		<div class="artist-info">
+			<h2>{{artist.name}}</h2>
+			<!-- <h2 style="color: {{artist.colors[0].hex}}">{{artist.name}}</h2> -->
+			<p>{{artist.concerts[0].info}}</p>
+		</div>
+		
+	</div>
+	<div class="sounds">
+		<div ng-repeat="sound in artist.sounds">
+			<div ng-switch on="sound.type">
+				<youtube ng-switch-when="youtube" show-sound="true" code="{{sound.link}}"></youtube>
+				<soundcloud ng-switch-when="soundcloud" show-sound="true" code="{{sound.link}}"></soundcloud>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="artist-sounds">
+		<div ng-repeat="sound in artist.sounds">
+			<div ng-switch on="sound.type">
+				<div class="video-container" ng-switch-when="youtube">
+					<iframe width="560" height="315" ng-src="http://www.youtube.com/embed/{{sound.link}}" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div> -->
+</div>

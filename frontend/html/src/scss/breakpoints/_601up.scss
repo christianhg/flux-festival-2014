@@ -1,0 +1,87 @@
+#page {
+	//max-width: 800px;
+}
+
+header[role="banner"] {
+	
+}
+
+nav[role="navigation"] {
+	width: pc(400,800);
+	left: pc(200,800);
+}
+
+#container {
+	width: pc(700,800);
+}
+
+.info {
+	
+}
+
+.info-text {
+		padding: em(28,14) pc(25,700);	
+	}
+
+.artist {
+	.artist-info {
+		padding: em(28,14) pc(50,700);		
+	}
+	.artist-data {
+		.artist-venue, .artist-time {
+			padding: 0 0 0 pc(50, 700);
+		}
+	}
+}
+
+.concert {
+	.concert-line {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 50%;
+		background: lighten($black, 20);
+		z-index: 1;
+	}
+	.concert-artist>span {
+		position: relative;
+		display: inline-block;
+	}
+
+	.concert-time {
+		left: 0;
+		z-index: 2;
+		position: absolute;
+	}
+	.concert-venue {
+		right: 0;
+		top: 0;
+		z-index: 2;
+		position: absolute;
+	}
+
+}
+
+footer {
+	#sponsors {
+		padding: em(42,14) pc(25,800);
+		li {
+			width: pc(150,800);
+			margin: 0 pc(25,800);
+			float: left;
+		}
+	}
+
+	p {
+		float: left;
+		width: pc(500,800);
+		padding: 0 0 0 pc(50,800);
+	}
+
+	#men {
+		width: pc(300,800);
+		padding: 0 pc(50,800) 0 0;
+		float: right;
+	}
+}

@@ -1,0 +1,60 @@
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin responsive($width) {
+	@if $width == width-small {
+		@media only screen and (min-width: $width-small) {
+			@content;
+		}
+	}
+	@else if $width == width-medium {
+		@media only screen and (min-width: $width-medium) {
+			@content;
+		}
+	}
+	@else if $width == width-large {
+		@media only screen and (min-width: $width-large) {
+			@content;
+		}
+	}
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@function em($target, $context: 14, $minus: false) {
+	@if $minus {
+		@return ($target / $context) * -1em;	
+	} @else {
+		@return ($target / $context) * 1em;
+	}	
+}
+
+@function pc($target, $context) {
+	@return ($target / $context) * 100%;
+}
+
+%flaticon-solid {
+	font-family: 'Flaticons Solid';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	//line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin flaticon-solid($icon) {
+	&:before {
+		content: $icon;
+	}
+}

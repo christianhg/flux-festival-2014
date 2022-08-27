@@ -1,0 +1,23 @@
+#page {
+	//background: lighten($black, 20);
+
+}
+
+.container {
+	
+}
+
+nav[role="navigation"] {
+	width: pc(400, 1400);
+	left: pc(500, 1400);
+}
+
+.artist{
+	.artist-info {
+		p {
+			font-size: em(17.5,14);
+			line-height: 1.5;
+		}
+	}
+}
+

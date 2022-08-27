@@ -1,0 +1,44 @@
+<div class="spinner" ng-show="loading">
+	<div class="rect1"></div>
+	<div class="rect2"></div>
+	<div class="rect3"></div>
+	<div class="rect4"></div>
+	<div class="rect5"></div>
+</div>
+<div class="artist" ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="artist in artists" id="artist-{{artist.id}}">
+	<div class="artist-meta">
+		<div class="artist-image">
+			<img ng-src="img/artists/{{artist.image}}" alt="{{artist.name}}" crop-image>
+		</div>
+		<!-- <artistimage filename="{{artist.image}}" artistname="{{artist.name}}"></artistimage> -->
+		<div class="artist-data">
+			<div class="artist-venue" ng-switch on="artist.concerts[0].venue">
+			<!-- <div style="background: {{artist.colors[1].hex}}" class="artist-venue" ng-switch on="artist.concerts[0].venue"> -->
+				<span class="house"></span>
+				<span ng-switch-when="null">TBA</span>
+				<span ng-switch-default>{{artist.concerts[0].venue.name}}</span>
+			</div>
+			<div class="artist-time" ng-switch on="artist.concerts[0].time">
+			<!-- <div style="background: {{artist.colors[2].hex}}" class="artist-time" ng-switch on="artist.concerts[0].time"> -->
+				<span class="clock"></span>
+				<span ng-switch-when="null">TBA</span>
+				<span ng-switch-default>{{artist.concerts[0].day}}, {{artist.concerts[0].time | niceTime}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="artist-details">
+		<div class="artist-info">
+			<h2>{{artist.name}}</h2>
+			<!-- <h2 style="color: {{artist.colors[0].hex}}">{{artist.name}}</h2> -->
+			<p>{{artist.concerts[0].info}}</p>
+		</div>
+		<div class="sounds">
+			<div ng-repeat="sound in artist.sounds">
+				<div ng-switch on="sound.type">
+					<youtube ng-switch-when="youtube" code="{{sound.link}}"></youtube>
+					<soundcloud ng-switch-when="soundcloud" code="{{sound.link}}"></soundcloud>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,498 @@
+body {
+	background: $black;
+	color: $white;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+a {
+	color: $white;
+}
+
+p {
+	padding: 0 0 0.5em;
+}
+
+#page {
+	margin: 0 auto;
+	font-size: 1.4em;
+	background: $black;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1400px;
+	@extend %clearfix;
+}
+
+.spinner {
+	margin: 0 auto em(63,10);
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.spinner > div {
+	background-color: #fff;
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+
+	-webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+	animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+header[role="banner"] {
+	padding: em(63,14) 0;
+	background: url("../img/headerbg.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	text-align: center;
+	text-transform: uppercase;
+	font-family: $sans-serif;
+	position: relative;
+
+	#logo {
+		width: 3.3em;
+		margin: 0 auto;
+		img {
+			width: 100%;
+
+		}
+	}
+	
+	.tagline {
+		font-size: em(14, 14);
+		line-height: em(42, 21);
+		font-weight: $bold;
+		display: table;
+		margin: em(21, 14) auto 0;
+		padding: 0 20px;
+		background: white;
+		color: $black;
+	}
+	h1 {
+		font-size: em(28, 14);
+		line-height: em(63, 28);
+		//line-height: em(84, 56);	
+	}
+
+	h2 {
+		font-weight: $regular;
+		font-size: em(10, 14);
+		line-height: 1;
+	}
+}
+
+nav[role="navigation"] {
+	width: pc(300,400);
+	left: pc(50,400);
+	height: em(63,21);
+	overflow: hidden;
+	position: absolute;
+	z-index: 3;
+	bottom: em(31.5, 21, true);
+	text-align: center;
+	letter-spacing: 0.16em;
+	font-size: em(21, 14);
+	line-height: em(63, 21);
+	font-weight: $extraBold;
+	background: $black;
+	#arrowdown {
+		width: em(17.8888888888889,21);
+		position: absolute;
+		top: em(21,21);
+		right: 20px;
+		display: block;
+	}
+	ul {
+		@include transition(margin, 0.2s, linear);
+		
+		list-style: none;
+		background: $black;
+		li {
+			@include transition(background, 0.2s, linear);
+		 	//display: none;
+		 	
+		 	a {
+		 		display: block;
+		 	}
+		 	/*&.active:nth-child(2) {
+		 		background: blue;
+		 	}*/
+		}
+	}
+	&:hover {
+
+		overflow: visible;
+		#arrowdown {
+			visibility: hidden;
+		}
+		ul {
+			
+			
+		}
+		li {
+			background: lighten($black, 5);
+			//display: block;
+		}
+	}
+	
+	&.artists-active {
+		ul {
+			margin-top: 0;
+		}
+	}
+	&.program-active {
+		ul {
+			margin-top: em(63, 21, true);
+		}
+	}
+	
+	&.info-active {
+		ul {
+			margin-top: em(126, 21, true);
+		}
+	}
+	/*&.tickets-active {
+		ul {
+			margin-top: em(189, 21, true);
+		}
+	}*/
+	&.shows-active {
+		ul {
+			margin-top: em(189, 21, true);
+			//margin-top: em(252, 21, true);
+		}
+	}
+}
+
+#container {
+	width: pc(350,400);
+	margin: 0 auto;
+	padding: em(63,14) 0 em(21,14);
+	//line-height: em(21, 14);
+}
+
+.info {
+	@extend %clearfix;
+	margin: 0 0 em(42,14);	
+}
+
+.info-text {
+	padding: em(28,14) pc(25,350);
+	background: $white;
+	color: $black;
+	h2 {
+		font-size: em(21,14);
+		line-height: 1;
+		padding: 0 0 em(14,14);
+		
+	}
+
+	p {
+		font-family: $serif;
+		line-height: em(21,14);
+	}
+}
+
+#shows {
+	margin: 0 0 em(42,14);
+}
+
+.artist {
+	@extend %clearfix;
+
+	margin: 0 0 em(42,14);
+
+	.artist-info {
+		padding: em(28,14) pc(25,350);
+		background: $white;
+		color: $black;
+
+		h2 {
+			font-size: em(21,14);
+			line-height: 1;
+			padding: 0 0 em(14,14);
+			
+		}
+
+		p {
+			font-family: $serif;
+			line-height: em(21,14);
+		}
+	}
+
+	.artist-image {
+		overflow: hidden;
+	}
+
+	.artist-data {
+		//font-size: em(21,14);
+		text-transform: uppercase;
+		line-height: em(42,14);
+		.artist-venue, .artist-time {
+			@extend %clearfix;
+			padding: 0 0 0 pc(25, 350);
+		}
+
+		.artist-venue {
+			background: lighten($black, 10);
+		}
+		.artist-time {
+			background: lighten($black, 20);	
+		}
+		.clock, .house {
+			display: block;
+			//width: 12.5%;
+			//width: pc(50,350);
+			float: left;
+			text-align: center;
+			@extend %flaticon-solid;
+			padding: 0 10px 0 0;
+		}
+		
+			.house {		
+				@include flaticon-solid("\e04d");	
+			}
+			.clock {		
+				@include flaticon-solid("\e108");	
+			}
+			
+		
+	}
+
+	.toggle-sounds {
+		cursor: pointer;
+		padding: em(10.5,14) 0;
+		text-align: center;
+
+		.youtube-logo, .soundcloud-logo {
+			display: inline-block;
+			
+		}
+
+		.youtube-logo {
+			width: em(29.82524271844656, 14);
+		}
+		.soundcloud-logo {
+			width: em(47.25, 14);
+		}
+
+		&.toggle-youtube {
+			//background: lighten(#cd201f,10);	
+			background: lighten($black, 20);
+		}
+
+		&.toggle-soundcloud {
+			//background: #f50;
+			background: lighten($black, 20);
+		}
+	}
+
+}
+
+#artist {
+	.sounds {
+		clear: both;
+		padding: em(42,14) 0 0;
+	}
+}
+
+#breadcrumbs {
+	list-style: none;
+	text-transform: uppercase;
+	line-height: em(42,14);
+	@extend %clearfix;
+	margin: 0 0 em(42,14) 0;
+
+	ol {
+		float: left;
+		position: relative;
+	}
+	
+	li {
+		position: relative;
+		z-index: 2;
+		background: lighten($black, 20);
+		padding: 0 20px;
+		display: block;	
+		float: left;
+
+		&.line {
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 50%;
+			z-index: 1;
+			left: 0;
+			right: 0;
+		}
+		&:nth-child(2) {
+			margin: 0 20px 0 0;	
+		}
+		
+	}
+	a {
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+.concert {
+	@extend %clearfix;
+	text-transform: uppercase;
+	//font-size: em(21,14);
+	line-height: em(42, 14);
+	margin: 0 0 em(21,14);
+	font-weight: $bold;
+	text-align: center;	
+	position: relative;
+
+	.concert-artist>span {
+		z-index: 2;
+		display: block;
+		font-weight: $extraBold;
+		letter-spacing: 0.16em;
+		a {
+			display: block;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	.concert-time {
+		// left: 0;
+		// z-index: 2;
+		// position: absolute;
+	}
+	.concert-venue {
+		// right: 0;
+		// top: 0;
+		// z-index: 2;
+		// position: absolute;
+	}
+
+	.concert-time,
+	.concert-venue,
+	.concert-artist>span {
+		padding: 0 20px;
+		background: lighten($black,20);
+	}
+}
+
+.video-container {
+	position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+	iframe {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+#tickets {
+	background: $green;
+	font-size: em(14, 14);
+	text-transform: uppercase;
+	text-align: center;
+	padding: em(42,21) 0;
+	a {
+		display: inline-block;
+		background: $white;
+		color: $green;
+		padding: 0 20px;
+		line-height: em(63,21);
+		font-weight: $extraBold;
+		letter-spacing: 0.16em;
+		span {
+			@extend %flaticon-solid;
+			@include flaticon-solid("\e1b3");	
+		}
+	}
+}
+
+footer {
+	background: $white;
+	color: $black;
+	border-bottom: 0.5em solid $black;
+	//padding: 3em 0 0;
+	@extend %clearfix;
+
+	#sponsors {
+		@extend %clearfix;
+		padding: em(21,14) 0 0;
+		
+		li {
+		
+			//display: table;
+			//width: 150px;
+			padding: 0 0 em(21,14);
+			display: block;
+			margin: 0 auto;
+			width: pc(150,400);
+
+		}
+	}
+
+	p {
+		margin: 0 auto;
+		padding: em(21,14) 0;
+		width: pc(350,400);
+		display: block;
+		text-transform: uppercase;
+	}
+
+	#men {
+		width: pc(150,400);
+		padding: 0 0 0 pc(25,400);
+
+
+	}
+}

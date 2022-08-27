@@ -1,0 +1,27 @@
+<header role="banner">
+	<div class="container">
+		<div id="logo">
+			<a href="/">
+				<img src="img/logo.png" alt="Flux-mand" />
+			</a>
+		</div>
+		<h1><a href="/">{{title}}</a></h1>
+		<h2>Alternativ musikfestival i Århus</h2>
+		<p class="tagline">21. - 23. august</p>
+		<p class="tagline">3 dage for 150 kr</p>
+		<p class="tagline">Radar, A-Huset og B-Huset</p>
+		<nav role="navigation" class="{{activeState}}-active">
+			<span id="arrowdown"><img src="img/layout/arrowdown.png" alt="down"></span>
+			<ul>
+				<li ng-click="updateActiveState(page.name)" ng-repeat="page in pages" ui-sref-active="active">
+				<!-- <li ng-click="updateActiveState(page.name)" ng-repeat="page in pages" ui-sref-active="active"> -->
+					<!-- <span ng-switch on="page.name">
+						<span ng-switch-when="activeState">{{page.title}}</span>
+						<a ng-switch-default ui-sref=".{{page.name}}">{{page.title}}</a>
+					</span> -->
+					<a ui-sref="root.{{page.name}}">{{page.title}}</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
